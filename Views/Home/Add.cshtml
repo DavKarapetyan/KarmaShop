@@ -1,0 +1,24 @@
+﻿@model Sneakers
+
+<form method="post" class="container">
+    <input asp-for="Name" placeholder="Name" class="form-control"/>
+    <input asp-for="PreviousPrice" placeholder="PrevPrice" class="form-control"/>
+    <input asp-for="Price" placeholder="Price" class="form-control"/>
+    <input asp-for="ProductCount" placeholder="count" class="form-control"/>
+    <input asp-for="Description" placeholder="Desc" class="form-control"/>
+    <select name="colorsIds" multiple>
+        @foreach (var item in ViewBag.Colors)
+        {
+            <option value="@item.Id">@item.Name</option>
+        }
+    </select>
+    <select name="sizesId" multiple>
+        @foreach (var item in ViewBag.Sizes)
+        {
+            <option value="@item.Id">@item.SizeNumber</option>
+        }
+    </select>
+
+
+    <input type="submit" class="btn btn-success"/>
+</form>
